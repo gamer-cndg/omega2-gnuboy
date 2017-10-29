@@ -1,4 +1,4 @@
-# gnuboy -- for the Onion Omega2
+# gnuboy - for the Onion Omega2
 
 ### Description
 This is a port of the original [gnuboy](https://github.com/rofl0r/gnuboy) Gameboy and Gameboy Color emulator for the Onion Omega2(+).  
@@ -65,4 +65,5 @@ Remember that gnuboy is GPL licensed! If you modify the source and distribute th
 ![games](https://github.com/gamer-cndg/omega2-gnuboy/raw/master/omega_gnuboy_compilation.png)
 
 Video (links to youtube):
+
 [![Watch the video](https://img.youtube.com/vi/LoHRnyid1ZQ/0.jpg)](https://www.youtube.com/watch?v=LoHRnyid1ZQ)
