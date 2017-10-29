@@ -64,7 +64,7 @@ static int ignoreCount = 0;
 
 void ev_poll()
 {
-	if(ignoreCount > 0) { ignoreCount--; return; }
+	if(ignoreCount > 0) { WiiClassic_ReadStatus(&newGamepadStatus); ignoreCount--; return; }
 
 	//read new status
 	bool readOkay = WiiClassic_ReadStatus(&newGamepadStatus);
@@ -74,7 +74,7 @@ void ev_poll()
 		//otherwise the gamepad will return that all
 		//buttons were suddenly pressed and released
 		//==> misfire on all buttons
-		ignoreCount = 1000;
+		ignoreCount = 100;
 		return;
 	}
 	//WiiClassic_PrintStatus(&newGamepadStatus);
