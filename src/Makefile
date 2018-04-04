@@ -34,7 +34,7 @@ program:
 all: | program
 
 upload: | all
-	sshpass -p "onioneer" scp $(EXECUTABLE) root@192.168.1.131:/root/.
+	sshpass -p "onioneer" scp $(EXECUTABLE) root@192.168.1.202:/root/.
 
 clean:
 	rm -rf $(EXECUTABLE)

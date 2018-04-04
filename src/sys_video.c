@@ -67,8 +67,8 @@ void vid_init()
 	ILI9225_FillFramebufferColor(COLOR_BLACK);
 	ILI9225_CopyFramebuffer();
 
-	fb.w = ILI9225_LCD_WIDTH;
-	fb.h = ILI9225_LCD_HEIGHT;
+	fb.w = ILI9225_LCD_WIDTH;	//
+	fb.h =  ILI9225_LCD_HEIGHT;
 	fb.pelsize = 2; /* bytes per pixel */
 	fb.pitch = ILI9225_LCD_WIDTH * 2; /* the length of a row of pixels in bytes. here width * 16 bit*/
 	fb.indexed = fb.pelsize == 1;
@@ -145,7 +145,16 @@ static void* render_thread() {
 		uint64_t delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
 		int ms = (int)delta_us / 1000;
 		//uncomment this if you want to measure FPS
-		printf("Frame time %d ms (FPS: %.3f)\n", ms, (1000.0f/ms));
+		static int framecount = 0;
+		static int framelen = 0;
+		static const int frameLimit = 30;
+		framelen += ms;
+		if(++framecount == frameLimit) {
+			float avg_ms = framelen / 30.0f;
+			printf("Frame time %.2f ms (FPS: %.3f)\n", avg_ms, (1000.0f/avg_ms));
+			framecount = 0;
+			framelen = 0;
+		}
 	}
 	return NULL;
 }
