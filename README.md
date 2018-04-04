@@ -77,4 +77,10 @@ Remember that gnuboy is GPL licensed! If you modify the source and distribute th
 
 Video (links to youtube):
 
+* Old video:
+
 [![Watch the video](https://img.youtube.com/vi/LoHRnyid1ZQ/0.jpg)](https://www.youtube.com/watch?v=LoHRnyid1ZQ)
+
+* New video:
+
+[![Watch the video](https://img.youtube.com/vi/2ajjqCrZBfQ/0.jpg)](https://www.youtube.com/watch?v=2ajjqCrZBfQ)
