@@ -14,7 +14,7 @@
 
 struct pcm pcm;
 
-#define AUDIO_BUF_LEN (128)
+#define AUDIO_BUF_LEN (128 * 4)
 //#define AUDIO_BUF_LEN (32*1024)
 static byte buf[AUDIO_BUF_LEN];		/* main audio buffer */
 static snd_pcm_t *handle;			/* main audio device handle */
@@ -34,6 +34,8 @@ void pcm_init()
 	pcm.stereo = 1; //mono.
 
 	printf("pcm_init()\n");
+
+	//return;
 
 	//init ALSA
     int err;
@@ -60,7 +62,8 @@ void pcm_init()
 void pcm_close()
 {
 	memset(&pcm, 0, sizeof pcm);
-    snd_pcm_close(handle);
+	if(handle != NULL)
+		snd_pcm_close(handle);
 }
 
 int pcm_submit()

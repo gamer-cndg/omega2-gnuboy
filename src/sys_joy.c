@@ -125,7 +125,7 @@ void ev_poll()
 			ev.code = buttonMap.eventCode[i];
 			ev_postevent(&ev);
 
-			printf("Button %s %s.\n", buttonMap.debugButtonNames[i], (ev.type == EV_RELEASE ? "released" : "pressed"));
+			//printf("Button %s %s.\n", buttonMap.debugButtonNames[i], (ev.type == EV_RELEASE ? "released" : "pressed"));
 		}
 	}
 
